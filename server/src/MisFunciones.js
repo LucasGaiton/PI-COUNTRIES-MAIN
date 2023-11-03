@@ -23,7 +23,8 @@ module.exports = {
                 capital:capital,
                 subregion:country.subregion === undefined ? "the subregion is not indicated" : country.subregion ,
                 area:country.area,
-                population: country.population 
+                population: country.population,
+                independent:country.independent
             }
         })
         return resul

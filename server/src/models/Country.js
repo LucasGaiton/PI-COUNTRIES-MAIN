@@ -37,6 +37,10 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    independent:{
+      type: DataTypes.BOOLEAN,
+      allowNull:true
+    }
 
   },{
     timestamps: false,///para que no se generen los parametros en la base de datos no necesarios
