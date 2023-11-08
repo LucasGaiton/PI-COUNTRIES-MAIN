@@ -3,7 +3,7 @@ const server = require("./src/server");
 //importamos la funciona para llenar la base de datos 
 
 const { conn } = require('./src/db.js');
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 conn.sync({ force: true }).then(() => {
 server.listen(PORT, async() => {
