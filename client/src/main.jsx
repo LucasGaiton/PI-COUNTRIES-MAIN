@@ -9,11 +9,9 @@ import { store } from './Redux/store'
 import { Provider } from 'react-redux'//PROVAIIIDERRR SE IMPORTA DE react-redux !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store = {store}> 
+  <Provider store={store}>
     <BrowserRouter>
       <App />
-    </BrowserRouter>,
+    </BrowserRouter>
   </Provider>
-
-
-)
+);
