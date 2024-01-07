@@ -9,10 +9,11 @@ const path = require('path');
 const {
   PGUSER, PGPASSWORD, PG_HOST, PGDATABASE, PGPORT
 } = process.env;
-
+import * as pg from "pg"
 const sequelize = new Sequelize(`postgresql://${PGUSER}:${PGPASSWORD}@${PG_HOST}:${PGPORT}/${PGDATABASE}`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  dialectModule: pg
 });
 const basename = path.basename(__filename);
 
