@@ -12,6 +12,7 @@ const getCountriesBd = async(req,res)=>{
         const {data} = await axios.get(url)
         const countryTransformed = countryTransformer(data)
         const result = await Country.bulkCreate(countryTransformed)
+        console.log("Se crearon");
         res.status(200).send("Se cargaron correctamente los datos a la base de datos")
     } catch (error) {
         res.status(500).send(error.message)
