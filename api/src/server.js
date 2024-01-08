@@ -4,11 +4,17 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 const server = express();
+const corsOptions = {
+    origin: 'https://pi-countries-main-front.vercel.app',
+    credentials: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type,Authorization',
+};
 
-server.use(cors());
-// server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
-// server.use(bodyParser.json({ limit: '50mb' }));
-// server.use(cookieParser());
+server.use(cors(corsOptions));
+server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
+server.use(bodyParser.json({ limit: '50mb' }));
+server.use(cookieParser());
 server.use(morgan('dev'));
 
 server.use((req, res, next) => {
